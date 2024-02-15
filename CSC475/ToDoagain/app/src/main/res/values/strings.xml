@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ToDo again</string>
+    <string name="show_complete">Show Complete</string>
+    <string name="hide_complete">Hide Complete</string>
+    <string name="add">Add</string>
+    <string name="to_dos">To-Dos</string>
+</resources>
