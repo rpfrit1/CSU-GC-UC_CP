@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item name="layMain" type="id" />
-    <item name="btnUrl" type="id" />
-    <item name="txturl" type="id" />
-    <item name="testText" type="id" />
-</resources>
