@@ -100,6 +100,23 @@
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/rpfrit1-patch-1" />
+    <option name="OPTIONS">
+      <set>
+        <option value="NO_FF" />
+        <option value="NO_VERIFY" />
+      </set>
+    </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="main" />
+    <option name="OPTIONS">
+      <set>
+        <option value="ROOT" />
+      </set>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -136,14 +153,23 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "last_directory_selection": "/Users/rpfrits/AndroidStudioProjects/GPSTracker/app/src/main/java",
     "last_opened_file_path": "/Users/rpfrits/AndroidStudioProjects/CSU-GC-UC_CP/CSC475/GPSTracker",
     "settings.editor.selected.configurable": "vcs.Git"
+  },
+  "keyToStringList": {
+    "GitStage.ChangesTree.GroupingKeys": [
+      "directory",
+      "module",
+      "repository"
+    ]
   }
 }]]></component>
   <component name="Push.Settings">
@@ -275,7 +301,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708130454744</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Up0loading new project">
+      <option name="closed" value="true" />
+      <created>1708131331672</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708131331672</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
