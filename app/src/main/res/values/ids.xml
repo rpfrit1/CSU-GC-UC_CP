@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item name="btnNav" type="id" />
-    <item name="layRecycle" type="id" />
-    <item name="txtTime" type="id" />
-    <item name="txtLong" type="id" />
-    <item name="txtLat" type="id" />
-    <item name="txtAlt" type="id" />
-</resources>

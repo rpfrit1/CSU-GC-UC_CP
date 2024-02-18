@@ -1,6 +1,6 @@
 @file:Suppress("DEPRECATION")
 
-package edu.csuglobal.csc475.GPSTracking
+package edu.csuglobal.csc475.gpsTracking
 
 
 import android.Manifest
