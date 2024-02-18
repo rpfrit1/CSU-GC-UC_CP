@@ -5,4 +5,25 @@
     <string name="date">Date</string>
     <string name="start_time">Start Time:</string>
     <string name="end_time">End Time:</string>
+    <string name="visit_email">Email Visit</string>
+    <string name="email_visit">Email Visit</string>
+    <string name="to_checklist">To Checklist</string>
+    <string name="Visit_Date">Visit Date</string>
+    <string name="end_of_visit">End of Visit</string>
+    <string name="start_of_visit">Start of Visit</string>
+    <string name="date_of_the_visit">Date of the Visit</string>
+    <string name="back_to_the_visit">Back to the Visit</string>
+    <string name="element_text">testing</string>
+    <string name="go_back_to_list">Go Back to List</string>
+    <string name="end_timer">End Timer</string>
+    <string name="in_process">In Process</string>
+    <string name="not_applicable">Not Applicable</string>
+    <string name="not_started">Not Started</string>
+    <string name="successfully_completed">Successfully Completed</string>
+    <string name="start_timer">Start Timer</string>
+    <string name="had_issues">Had Issues</string>
+    <string name="notes">Notes</string>
+    <string name="time_it_took_to_complete_step">Time it took to complete step</string>
+    <string name="notes_on_this_checklist_item_from_the_visit">Notes on this checklist item from the visit</string>
+    <string name="time_elapsed">Time Elapsed</string>
 </resources>

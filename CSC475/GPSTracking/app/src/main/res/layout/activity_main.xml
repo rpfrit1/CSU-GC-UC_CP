@@ -21,7 +21,7 @@
             android:layout_height="636dp"
             android:visibility="visible"
             android:contentDescription="@string/map_of_location"
-            app:mapId="@string/map_id"/>
+            app:mapId="@string/map_id" />
     <Button
         android:id="@+id/btnStart"
         android:layout_width="wrap_content"

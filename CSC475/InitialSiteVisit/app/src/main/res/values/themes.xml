@@ -5,5 +5,5 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.InitialSiteVisit" parent="Base.Theme.InitialSiteVisit" />
+    <style name="InitialSiteVisit" parent="Theme.AppCompat.Light" />
 </resources>

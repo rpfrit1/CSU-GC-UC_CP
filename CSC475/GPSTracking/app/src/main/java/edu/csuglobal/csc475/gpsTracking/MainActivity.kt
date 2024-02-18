@@ -36,6 +36,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 class MainActivity : AppCompatActivity() {
 
     private lateinit var locationRequest: LocationRequest
+    private lateinit var locationCallback: LocationCallback
     private lateinit var txtLong:TextView
     private lateinit var txtLat:TextView
     private lateinit var btnStart:Button
@@ -97,6 +98,48 @@ class MainActivity : AppCompatActivity() {
         btnStart.setOnClickListener {
             getCurrentLocation()
             }//end setOnClickListener()
+
+        locationCallback = object : LocationCallback() {
+            override fun onLocationResult(locationResult: LocationResult) {
+                super.onLocationResult(locationResult)
+                val index = locationResult.locations.size - 1
+                txtLat.text = locationResult.locations[index].latitude.toString()
+                txtLong.text = locationResult.locations[index].longitude.toString()
+
+                //add locationResult to places
+                val location = LatLng(
+                    locationResult.locations[index].latitude,
+                    locationResult.locations[index].longitude
+                )
+                //add to mapShow
+                mapShow.getMapAsync { googleMap ->
+                    googleMap.addMarker(
+                        MarkerOptions()
+                            .position(location)
+                    )
+                    places.add(Place(location, location))
+                    addMarkers(googleMap)
+                    googleMap.moveCamera(CameraUpdateFactory.newLatLng(location))
+                    googleMap.animateCamera(CameraUpdateFactory.zoomIn())
+                    googleMap.animateCamera(
+                        CameraUpdateFactory.zoomTo(15f),
+                        2000,
+                        null
+                    )
+                    //enanble zoom controls
+                    googleMap.uiSettings.isZoomControlsEnabled = true
+                }//end getMapAsync function
+            }//end onLocationResult()
+        }//end locationCallback object
+
+        //create a listener for the LocationCallback object
+        LocationServices.getFusedLocationProviderClient(this@MainActivity)
+            .requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper())
+
+        //create a listener for the btnStart button
+        btnStart.setOnClickListener {
+            getCurrentLocation()
+        }
     }//end onCreate()
     private fun addMarkers(googleMap: GoogleMap) {
         places.forEach { place ->
@@ -136,7 +179,11 @@ class MainActivity : AppCompatActivity() {
                                     addMarkers(googleMap)
                                     googleMap.moveCamera(CameraUpdateFactory.newLatLng(location))
                                     googleMap.animateCamera(CameraUpdateFactory.zoomIn())
-                                    googleMap.animateCamera(CameraUpdateFactory.zoomTo(15f), 2000, null)
+                                    googleMap.animateCamera(
+                                        CameraUpdateFactory.zoomTo(15f),
+                                        2000,
+                                        null
+                                    )
                                 }//end getMapAsync function
                             }//end if
                         }//end onLocationResult()
@@ -151,6 +198,7 @@ class MainActivity : AppCompatActivity() {
         }//end else
         //end if
     }//end getLocation()
+
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onRequestPermissionsResult(
@@ -182,8 +230,9 @@ class MainActivity : AppCompatActivity() {
         }//end if
     }//end onActivityResult()
     data class Place(
-        val latLng:LatLng,
-        val address:LatLng) {
+        val latLng: LatLng,
+        val address: LatLng
+    ) {
         val name: String
 
         init {
