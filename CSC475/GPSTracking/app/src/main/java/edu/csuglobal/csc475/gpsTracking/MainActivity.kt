@@ -26,11 +26,11 @@ import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.LocationSettingsRequest
 import com.google.android.gms.location.LocationSettingsStatusCodes
 import com.google.android.gms.location.Priority
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import edu.csuglobal.csc475.myapplication.R
 
 
 class MainActivity : AppCompatActivity() {
@@ -102,7 +102,7 @@ class MainActivity : AppCompatActivity() {
         places.forEach { place ->
             googleMap.addMarker(
                 MarkerOptions()
-                    .position(place.latLng)
+                    .position(place.latLng).title(place.name)
             )
         }//end forEach loop
     }//end addMarkers function
@@ -132,6 +132,11 @@ class MainActivity : AppCompatActivity() {
                                         MarkerOptions()
                                             .position(location)
                                     )
+                                    places.add(Place(location, location))
+                                    addMarkers(googleMap)
+                                    googleMap.moveCamera(CameraUpdateFactory.newLatLng(location))
+                                    googleMap.animateCamera(CameraUpdateFactory.zoomIn())
+                                    googleMap.animateCamera(CameraUpdateFactory.zoomTo(15f), 2000, null)
                                 }//end getMapAsync function
                             }//end if
                         }//end onLocationResult()
@@ -178,7 +183,14 @@ class MainActivity : AppCompatActivity() {
     }//end onActivityResult()
     data class Place(
         val latLng:LatLng,
-        val address:LatLng)
+        val address:LatLng) {
+        val name: String
+
+        init {
+            //set name to the time stamp
+            name = System.currentTimeMillis().toString()
+        }//end init function
+    }//end Place class
 }//end MainActivity
 
 

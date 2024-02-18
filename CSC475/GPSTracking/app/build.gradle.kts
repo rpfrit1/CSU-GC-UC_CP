@@ -2,14 +2,15 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id ("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+    id("com.google.gms.google-services")
 }
 
 android {
-    namespace = "edu.csuglobal.csc475.myapplication"
+    namespace = "edu.csuglobal.csc475.gpsTracking"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "edu.csuglobal.csc475.myapplication"
+        applicationId = "edu.csuglobal.csc475.gpsTracking"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -59,6 +60,8 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation ("com.google.android.gms:play-services-location:21.1.0")
     implementation("com.google.android.gms:play-services-maps:18.2.0")
+    implementation(platform("com.google.firebase:firebase-bom:32.7.2"))
+    implementation("com.google.firebase:firebase-analytics:21.5.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
