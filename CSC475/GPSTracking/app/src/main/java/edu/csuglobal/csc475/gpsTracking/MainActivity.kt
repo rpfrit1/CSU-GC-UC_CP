@@ -136,7 +136,11 @@ class MainActivity : AppCompatActivity() {
                                     addMarkers(googleMap)
                                     googleMap.moveCamera(CameraUpdateFactory.newLatLng(location))
                                     googleMap.animateCamera(CameraUpdateFactory.zoomIn())
-                                    googleMap.animateCamera(CameraUpdateFactory.zoomTo(15f), 2000, null)
+                                    googleMap.animateCamera(
+                                        CameraUpdateFactory.zoomTo(15f),
+                                        2000,
+                                        null
+                                    )
                                 }//end getMapAsync function
                             }//end if
                         }//end onLocationResult()
@@ -182,8 +186,9 @@ class MainActivity : AppCompatActivity() {
         }//end if
     }//end onActivityResult()
     data class Place(
-        val latLng:LatLng,
-        val address:LatLng) {
+        val latLng: LatLng,
+        val address: LatLng
+    ) {
         val name: String
 
         init {
