@@ -13,11 +13,18 @@ class MainActivity : AppCompatActivity() {
 
     //get the body of the response
     lateinit var body: ResponseBody
+<<<<<<< HEAD
 
     //get the content of the body
     lateinit var content: String
     private lateinit var txtResult: TextView
     private val url = "https://jsonplaceholder.typicode.com/todos"
+=======
+    //get the content of the body
+    lateinit var content:String
+    private lateinit var txtResult: TextView
+    private val url  = "https://jsonplaceholder.typicode.com/todos"
+>>>>>>> origin/main
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,11 +33,18 @@ class MainActivity : AppCompatActivity() {
         //get the text view
         txtResult = findViewById(R.id.txtResult)
         content = txtResult.toString()
+<<<<<<< HEAD
         //create a thread and call dowloadFile function
         Thread(
             Runnable {
                 downloadFile()
             }//end Runnable
+=======
+    //create a thread and call dowloadFile function
+        Thread(Runnable {
+            downloadFile()
+        }//end Runnable
+>>>>>>> origin/main
         ).start()//end start function
         //wait for the thread to finish
         runBlocking {
@@ -46,7 +60,11 @@ class MainActivity : AppCompatActivity() {
     }//end onCreate
 
     //createa a thread to download the file
+<<<<<<< HEAD
     private fun downloadFile() {
+=======
+    private fun downloadFile(){
+>>>>>>> origin/main
         //create a client to make the request
         val client = OkHttpClient()
         //create a request to the website
@@ -59,14 +77,21 @@ class MainActivity : AppCompatActivity() {
                 //log the failure, display a message to the user, and cancel the coroutine
                 content = "Failed to download file"
             }//end onFailure
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
             override fun onResponse(call: Call, response: Response) {
                 //if response is successful, log the response, add the body to content
                 if (response.isSuccessful) {
                     content = response.body!!.string()
 
                     //run on the UI thread to update the text view with the content of the body
+<<<<<<< HEAD
                     runOnUiThread(Runnable() {
+=======
+                    runOnUiThread(Runnable(){
+>>>>>>> origin/main
                         fun run() {
                             txtResult.text = content.toString()
                         }//end run function

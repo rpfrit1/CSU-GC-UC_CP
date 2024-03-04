@@ -5,9 +5,15 @@
     android:layout_height="match_parent">
 
     <CheckBox
+<<<<<<< HEAD
         android:id="@+id/checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+=======
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkbox" />
+>>>>>>> origin/main
 
     <EditText
         android:id="@+id/taskText"

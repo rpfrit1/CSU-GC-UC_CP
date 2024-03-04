@@ -1,10 +1,16 @@
 package edu.csuglobal.csc475.simpletodo
 
 class ToDoItem(
+<<<<<<< HEAD
     private val id: Int, desc: String, comp: Boolean
 ) {
     private var desc: String = desc
     private var comp: Boolean = comp
+=======
+    private val id: Int, desc:String, comp:Boolean) {
+    private var desc:String = desc
+    private var comp:Boolean = comp
+>>>>>>> origin/main
 
     //create class functions
     fun toggleComplete() {
@@ -12,16 +18,28 @@ class ToDoItem(
     }//end toggleComplete function
 
     //create setters and getters for id and desc
+<<<<<<< HEAD
     fun getId(): Int {
+=======
+    fun getId():Int {
+>>>>>>> origin/main
         return id
     }//end getId function
 
 
+<<<<<<< HEAD
     fun getDesc(): String {
         return desc
     }//end getDesc function
 
     fun setDesc(desc: String) {
+=======
+    fun getDesc():String {
+        return desc
+    }//end getDesc function
+
+    fun setDesc(desc:String) {
+>>>>>>> origin/main
         this.desc = desc
     }//end setDesc function
 

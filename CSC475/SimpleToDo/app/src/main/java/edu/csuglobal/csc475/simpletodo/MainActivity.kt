@@ -21,20 +21,32 @@ import edu.csuglobal.csc475.simpletodo.ui.theme.SimpleToDoTheme
 class DataManager(context: Context) {
     //database variable
     private lateinit var db: SQLiteDatabase
+<<<<<<< HEAD
 
     //cursor variable
     private lateinit var cursor: Cursor
 
+=======
+    //cursor variable
+    private lateinit var cursor: Cursor
+>>>>>>> origin/main
     //context variable
     private val context = context
 
     //Taken from the textbook in order to encapsulate this portion with a supposed good helper class
     private inner class CustomSQLiteOpenHelper
+<<<<<<< HEAD
         (context: Context) :
         SQLiteOpenHelper(
             context, DB_NAME,
             null, DB_VERSION
         ) {
+=======
+        (context: Context):
+        SQLiteOpenHelper(
+            context, DB_NAME,
+            null, DB_VERSION) {
+>>>>>>> origin/main
         override fun onCreate(db: SQLiteDatabase?) {
             //create a new table named ToDo with an auto increment key, String Description, and a boolean completion
             val newTableQueryString = ("create table"
@@ -84,6 +96,7 @@ class DataManager(context: Context) {
         values.put(TABLE_ROW_DESC, desc)
         values.put(TABLE_ROW_COMP, comp)
 
+<<<<<<< HEAD
         this.db.update(TABLE_TODO, values, "_id = ", arrayOf(toDoId.toString()))
 
         Log.i(
@@ -98,11 +111,25 @@ class DataManager(context: Context) {
         db.insert(TABLE_TODO, null,
             ContentValues().apply {
                 put(TABLE_ROW_DESC, desc)
+=======
+        this.db.update(TABLE_TODO, values, "_id = ",arrayOf(toDoId.toString()))
+
+        Log.i("Update() = ","UPDATE " + TABLE_TODO + "SET " + TABLE_ROW_DESC + " = " + desc
+                + ", " + TABLE_ROW_COMP + " = " + comp + " FROM " + TABLE_TODO + " WHERE" +
+                TABLE_ROW_ID + " = " + toDoId + ";")
+    }//end complete function
+
+    fun insert(desc:String, comp:Int = 0) {
+        //all all inputted values in record
+        db.insert(TABLE_TODO,null,
+            ContentValues().apply { put(TABLE_ROW_DESC,desc)
+>>>>>>> origin/main
                 put(TABLE_ROW_COMP, comp)
             } //end apply function
         )
 
         //log the event
+<<<<<<< HEAD
         Log.i(
             "Insert() = ", "INSERT INTO " + TABLE_TODO + " (" +
                     TABLE_ROW_DESC + ", " + TABLE_ROW_COMP + ") VALUES (" +
@@ -111,10 +138,19 @@ class DataManager(context: Context) {
     }//end insert function
 
     fun delete(toDoId: Int) {
+=======
+        Log.i("Insert() = ", "INSERT INTO " + TABLE_TODO + " (" +
+                TABLE_ROW_DESC + ", " + TABLE_ROW_COMP + ") VALUES (" +
+                "'" + desc + "', " + comp + "');")
+    }//end insert function
+
+    fun delete(toDoId:Int) {
+>>>>>>> origin/main
         //delete if record exists
         db.delete(TABLE_TODO, TABLE_ROW_ID, arrayOf(toDoId.toString()))
 
         //log event
+<<<<<<< HEAD
         Log.i(
             "Delete() = ", "DELETE FROM " + TABLE_TODO +
                     " WHERE " + TABLE_ROW_ID + " = " + toDoId + ";"
@@ -126,6 +162,15 @@ class DataManager(context: Context) {
             "SELECT * from " + TABLE_TODO +
                     " WHERE" + TABLE_ROW_DESC + " = '" + desc + "'", null
         )
+=======
+        Log.i("Delete() = ", "DELETE FROM " + TABLE_TODO +
+                " WHERE " + TABLE_ROW_ID + " = " + toDoId + ";")
+    }//end delete function
+
+    fun find(desc:String): Cursor {
+        return db.rawQuery("SELECT * from " + TABLE_TODO +
+                " WHERE" + TABLE_ROW_DESC + " = '" + desc + "'", null)
+>>>>>>> origin/main
     }//end find function
 
     fun selectAll(): Cursor {
@@ -147,24 +192,33 @@ class DataManager(context: Context) {
     }//end count function
 
     fun countCompleted(): Int {
+<<<<<<< HEAD
         val cursor = db.rawQuery(
             "SELECT COUNT(*) FROM " + TABLE_TODO + " WHERE " + TABLE_ROW_COMP + " = 1",
             null
         )
+=======
+        val cursor = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_TODO + " WHERE " + TABLE_ROW_COMP + " = 1", null)
+>>>>>>> origin/main
         cursor.moveToFirst()
         return cursor.getInt(0)
     }//end countCompleted function
 
     fun countIncomplete(): Int {
+<<<<<<< HEAD
         val cursor = db.rawQuery(
             "SELECT COUNT(*) FROM " + TABLE_TODO + " WHERE " + TABLE_ROW_COMP + " = 0",
             null
         )
+=======
+        val cursor = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_TODO + " WHERE " + TABLE_ROW_COMP + " = 0", null)
+>>>>>>> origin/main
         cursor.moveToFirst()
         return cursor.getInt(0)
     }//end countIncomplete function
 
     fun selectCompleted(): Cursor {
+<<<<<<< HEAD
         return db.rawQuery(
             "SELECT * FROM " + TABLE_TODO + " WHERE " + TABLE_ROW_COMP + " = 1",
             null
@@ -204,6 +258,31 @@ class DataManager(context: Context) {
             "SELECT * FROM " + TABLE_TODO + " WHERE " + TABLE_ROW_COMP + " = " + comp,
             null
         )
+=======
+        return db.rawQuery("SELECT * FROM " + TABLE_TODO + " WHERE " + TABLE_ROW_COMP + " = 1", null)
+    }//end selectCompleted function
+
+    fun selectIncomplete(): Cursor {
+        return db.rawQuery("SELECT * FROM " + TABLE_TODO + " WHERE " + TABLE_ROW_COMP + " = 0", null)
+    }//end selectIncomplete function
+
+    fun select(toDoId:Int, desc:String): Cursor {
+        return db.rawQuery("SELECT * FROM " + TABLE_TODO + " WHERE " + TABLE_ROW_ID + " = " + toDoId + " AND " +
+                TABLE_ROW_DESC + " = '" + desc + "'", null)
+    }//end select function
+
+    fun select(desc:String, comp:Int): Cursor {
+        return db.rawQuery("SELECT * FROM " + TABLE_TODO + " WHERE " + TABLE_ROW_DESC + " = '" + desc + "' AND " +
+                TABLE_ROW_COMP + " = " + comp, null)
+    }//end select function
+
+    fun select(desc:String): Cursor {
+        return db.rawQuery("SELECT * FROM " + TABLE_TODO + " WHERE " + TABLE_ROW_DESC + " = '" + desc + "'", null)
+    }//end select function
+
+    fun select(comp:Int): Cursor {
+        return db.rawQuery("SELECT * FROM " + TABLE_TODO + " WHERE " + TABLE_ROW_COMP + " = " + comp, null)
+>>>>>>> origin/main
     }//end select function
 }//end DataManager class
 
@@ -235,11 +314,16 @@ class MainActivity : ComponentActivity() {
     //ToDoItems from the database
     private fun loadIncompleteItems() {
         todoItems.clear()
+<<<<<<< HEAD
         todoItems.addAll(convertToList(dm.selectIncomplete()))
+=======
+        todoItems.addAll(convertToList( dm.selectIncomplete()))
+>>>>>>> origin/main
     }//end loadIncompleteItems function
 }//end MainActivity class
 
 //create a function that takes a cusor and converts it to a list of ToDoItems
+<<<<<<< HEAD
 fun convertToList(cursor: Cursor): List<ToDoItem> {
     val todoItems = mutableListOf<ToDoItem>()
 
@@ -251,6 +335,17 @@ fun convertToList(cursor: Cursor): List<ToDoItem> {
                 comp = cursor.getInt(3) == 1
             )
         )
+=======
+    fun convertToList(cursor: Cursor): List<ToDoItem> {
+        val todoItems = mutableListOf<ToDoItem>()
+
+    while (cursor.moveToNext()) {
+        todoItems.add(ToDoItem(
+            id = cursor.getInt(0),
+            desc = cursor.getString(2),
+            comp = cursor.getInt(3) == 1
+        ))
+>>>>>>> origin/main
     }//end while loop
     return todoItems
 }//end convertCursorToList function
@@ -259,7 +354,10 @@ fun convertToList(cursor: Cursor): List<ToDoItem> {
 fun SimpleToDoApp() {
     Greeting("Android")
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(

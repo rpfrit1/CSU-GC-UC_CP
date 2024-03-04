@@ -15,17 +15,27 @@
         android:supportsRtl="true"
         android:theme="@style/InitialSiteVisit"
         tools:targetApi="31">
+<<<<<<< HEAD
         <activity
             android:name=".TaskList"
+=======
+        <activity android:name=".TaskList"
+>>>>>>> origin/main
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity
             android:name=".TaskDetail"
             android:exported="false"></activity>
+=======
+        <activity android:name=".TaskDetail"
+            android:exported="false">
+        </activity>
+>>>>>>> origin/main
         <activity
             android:name=".MainActivity"
             android:exported="true">

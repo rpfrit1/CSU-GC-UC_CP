@@ -7,7 +7,11 @@ import android.widget.EditText
 import android.widget.TextView
 
 class TaskDetail : AppCompatActivity() {
+<<<<<<< HEAD
     private lateinit var db: SiteVisitDatabase
+=======
+    private lateinit var db:SiteVisitDatabase
+>>>>>>> origin/main
     private lateinit var checkListDao: CheckListItemDao
     private lateinit var checkTitleDao: ChecklistTitleDao
     private lateinit var checkListItem: CheckListItem

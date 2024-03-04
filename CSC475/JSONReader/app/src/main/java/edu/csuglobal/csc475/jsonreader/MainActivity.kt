@@ -53,7 +53,11 @@ class MainActivity : AppCompatActivity() {
     }//end onCreate function
 
     //create a function to read the file at the url
+<<<<<<< HEAD
     private fun readFile(url: String): String {
+=======
+    private fun readFile(url: String):String {
+>>>>>>> origin/main
         try {
             //create a file
             val file = File(url)
@@ -63,8 +67,13 @@ class MainActivity : AppCompatActivity() {
             val inputStreamReader = InputStreamReader(fileInputStream, Charset.forName("UTF-8"))
             //create a buffered reader
             val bufferedReader = BufferedReader(inputStreamReader)
+<<<<<<< HEAD
             //create a string builder
             val stringBuilder = StringBuilder()
+=======
+        //create a string builder
+        val stringBuilder = StringBuilder()
+>>>>>>> origin/main
             //loop through the buffered reader
             for (line in bufferedReader.lineSequence()) {
                 //append the line to the string builder
@@ -79,6 +88,7 @@ class MainActivity : AppCompatActivity() {
 
     //create a function to parse the json file passed
     private fun pullFile(jsonFile: String) {
+<<<<<<< HEAD
         try {
             //create a json object
             val jsonObject = JSONObject(jsonFile)
@@ -86,6 +96,15 @@ class MainActivity : AppCompatActivity() {
             Log.d("jsonObject", jsonObject.toString())
             //create a json array
             val jsonArray = jsonObject.getJSONArray("data")
+=======
+        try{
+        //create a json object
+        val jsonObject = JSONObject(jsonFile)
+            //log the current state of the json object
+            Log.d("jsonObject", jsonObject.toString())
+        //create a json array
+        val jsonArray = jsonObject.getJSONArray("data")
+>>>>>>> origin/main
             //log the current state of the json array
             Log.d("jsonArray", jsonArray.toString())
             //loop through the json array
@@ -108,13 +127,21 @@ class MainActivity : AppCompatActivity() {
         }//end try
 
         //catch JSON Exceptions
+<<<<<<< HEAD
         catch (j: JSONException) {
+=======
+        catch (j:JSONException) {
+>>>>>>> origin/main
             //put a message on the layout stating unable to pull the file
             val textView = TextView(this)
             textView.text = "Unable to parse the JSON file"
             layMain.addView(textView)
         }//end catch
+<<<<<<< HEAD
         catch (e: Exception) {
+=======
+        catch (e:Exception){
+>>>>>>> origin/main
             //put a message on the layout stating unable to pull the file
             val textView = TextView(this)
             textView.text = "Unable to pull file"

@@ -13,13 +13,20 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.Update
 
+<<<<<<< HEAD
 @Entity(tableName = "site_visit")
 data class SiteVisit(
     @PrimaryKey(autoGenerate = true) val visitId: Int = 0,
+=======
+@Entity (tableName = "site_visit")
+data class SiteVisit(
+    @PrimaryKey(autoGenerate = true)val visitId: Int = 0,
+>>>>>>> origin/main
     @ColumnInfo(name = "site_name") var siteName: String = "",
     @ColumnInfo(name = "visit_date") var visitDate: String = "",
     @ColumnInfo(name = "visit_start_time") var visitStartTime: String = "00:00",
     @ColumnInfo(name = "visit_end_time") var visitEndTime: String = "00:00"
+<<<<<<< HEAD
 ) {
     fun toString(visitId: Int): String =
         "Site: $siteName\nDate: $visitDate\nStart Time: $visitStartTime\nEnd Time: $visitEndTime\n"
@@ -27,6 +34,15 @@ data class SiteVisit(
 }//end SiteVisit class
 
 @Entity(tableName = "checklist_item")
+=======
+)
+{
+    fun toString(visitId: Int):String = "Site: $siteName\nDate: $visitDate\nStart Time: $visitStartTime\nEnd Time: $visitEndTime\n"
+
+}//end SiteVisit class
+
+@Entity (tableName = "checklist_item")
+>>>>>>> origin/main
 data class CheckListItem(
     @PrimaryKey(autoGenerate = true) val checkListId: Int = 0,
     @ColumnInfo(name = "visitId") val visitId: Int,
@@ -34,6 +50,7 @@ data class CheckListItem(
     @ColumnInfo(name = "check_list_item_state") var checkListItemState: String = "Not Started",
     @ColumnInfo(name = "time_spent") var timespent: String = "00:00",
     @ColumnInfo(name = "check_list_comments") var checkListComments: String = ""
+<<<<<<< HEAD
 ) {
     //create a toString that pulls the ChecklistItem title from ChecklistTitle by id and shows details of it
     fun toString(visitId: Int, checkListItem: Int, context: Context): String =
@@ -49,6 +66,21 @@ data class CheckListItem(
 data class ChecklistTitle(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "titleId") val titleId: Int = 0,
+=======
+)
+{
+    //create a toString that pulls the ChecklistItem title from ChecklistTitle by id and shows details of it
+    fun toString(visitId: Int, checkListItem: Int, context:Context): String = "\tChecklist Item: " +
+            "${SiteVisitDatabase.getInstance(context).checklistTitleDao().
+            getChecklistTitle(checkListItem)?.title}\n\tState: $checkListItemState\n\tTime Spent: " +
+            "$timespent\n\tComments: $checkListComments"
+}//end CheckListItem class
+
+@Entity (tableName = "checklist_title")
+data class ChecklistTitle(
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "titleId")val titleId: Int = 0,
+>>>>>>> origin/main
     @ColumnInfo(name = "title") val title: String = ""
 ) {
     override fun toString(): String {
@@ -59,8 +91,12 @@ data class ChecklistTitle(
 
 //create Dao's for each class
 @Dao
+<<<<<<< HEAD
 interface SiteVisitDao {
     //end SiteVisitDao class
+=======
+interface SiteVisitDao {//end SiteVisitDao class
+>>>>>>> origin/main
     //end SiteVisitDao class
     @Query("SELECT * FROM site_visit")
     fun getAllSiteVisits(): List<SiteVisit>
@@ -73,13 +109,19 @@ interface SiteVisitDao {
 
     @Delete
     fun deleteSiteVisit(siteVisit: SiteVisit)
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
     @Query("SELECT * FROM site_visit WHERE visitId = :visitId")
     fun getSiteVisit(visitId: Int): SiteVisit?
 
     @Query("SELECT * FROM site_visit WHERE visitId = :site_name")
     fun getSiteVisit(site_name: String): SiteVisit?
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
     @Insert
     fun insert(siteVisit: SiteVisit)
 
@@ -112,10 +154,15 @@ interface ChecklistTitleDao {
     @Query("SELECT * FROM checklist_title WHERE title = :title")
     fun getChecklistTitle(title: String): ChecklistTitle?
 }//end ChecklistTitleDao class
+<<<<<<< HEAD
 
 @Dao
 interface CheckListItemDao {
     //end CheckListItemDao class
+=======
+@Dao
+interface CheckListItemDao {//end CheckListItemDao class
+>>>>>>> origin/main
     @Query("SELECT * FROM checklist_item WHERE visitId = :visitId")
     fun getChecklistItems(visitId: Int): List<CheckListItem>
 
@@ -151,6 +198,7 @@ interface CheckListItemDao {
 
 }//end ChecklistItemDao class
 
+<<<<<<< HEAD
 @Database(
     entities = [SiteVisit::class, ChecklistTitle::class, CheckListItem::class],
     version = 1,
@@ -158,6 +206,10 @@ interface CheckListItemDao {
 )
 abstract class SiteVisitDatabase : RoomDatabase() {
     //end SiteVisitDatabase class
+=======
+@Database(entities = [SiteVisit::class, ChecklistTitle::class, CheckListItem::class], version = 1, exportSchema = false)
+abstract class SiteVisitDatabase : RoomDatabase() {//end SiteVisitDatabase class
+>>>>>>> origin/main
     abstract fun siteVisitDao(): SiteVisitDao
     abstract fun checklistTitleDao(): ChecklistTitleDao
     abstract fun checklistItemDao(): CheckListItemDao
@@ -174,12 +226,19 @@ abstract class SiteVisitDatabase : RoomDatabase() {
         }//end getInstance function
 
         private fun buildDatabase(context: Context): SiteVisitDatabase {
+<<<<<<< HEAD
             if (instance != null) return instance!!
             //create the database and tables
             instance = Room.databaseBuilder(
                 context, SiteVisitDatabase::class.java,
                 "site_visit_database.db"
             ).allowMainThreadQueries().build()
+=======
+            if(instance != null) return instance!!
+            //create the database and tables
+            instance = Room.databaseBuilder(context, SiteVisitDatabase::class.java,
+                "site_visit_database.db").allowMainThreadQueries().build()
+>>>>>>> origin/main
             return instance as SiteVisitDatabase
         }//end buildDatabase function
     }//end companion object

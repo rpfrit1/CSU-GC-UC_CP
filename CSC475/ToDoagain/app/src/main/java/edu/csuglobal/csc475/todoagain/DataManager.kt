@@ -15,6 +15,7 @@ class DataManager(context: Context) {
     //create a SQLite database for a todo list
     private var db: SQLiteDatabase
 
+<<<<<<< HEAD
     private inner class CustomSQLiteOpenHelper(context: Context) :
         SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION) {
 
@@ -22,6 +23,13 @@ class DataManager(context: Context) {
             //create a new table named ToDo with an auto increment key, String Description, and a boolean completion
             val newTableQueryString =
                 ("create table $TABLE_TODO IF NOT EXISTS($TABLE_TODO_ROW_ID integer primary key autoincrement not null, $TABLE_TODO_ROW_DESC text not null, $TABLE_TODO_ROW_DONE integer not null);")
+=======
+    private inner class CustomSQLiteOpenHelper(context:Context): SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION) {
+
+        override fun onCreate(db: SQLiteDatabase) {
+            //create a new table named ToDo with an auto increment key, String Description, and a boolean completion
+            val newTableQueryString = ("create table $TABLE_TODO IF NOT EXISTS($TABLE_TODO_ROW_ID integer primary key autoincrement not null, $TABLE_TODO_ROW_DESC text not null, $TABLE_TODO_ROW_DONE integer not null);")
+>>>>>>> origin/main
             db.execSQL(newTableQueryString)
             //log the event
             Log.i("onCreate() = ", "TABLE CREATED.")
@@ -143,11 +151,16 @@ class DataManager(context: Context) {
     }//end getItems function
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
     //create a function to get all todo items from a todo list with a specific status
     @SuppressLint("Range")
     @Composable
     fun getItemsWithStatus(status: Boolean): ToDoList<ToDoItem> {
         //get the items from the database using the query function
+<<<<<<< HEAD
         val cursor = db.query(
             TABLE_TODO,
             null,
@@ -157,6 +170,9 @@ class DataManager(context: Context) {
             null,
             null
         )
+=======
+        val cursor = db.query(TABLE_TODO, null, TABLE_TODO_ROW_DONE + " = " + (if (status) 1 else 0).toString(), null, null, null, null)
+>>>>>>> origin/main
         //get the items from the cursor
         return cursor.use {
             //create a new todo list
@@ -166,11 +182,15 @@ class DataManager(context: Context) {
             //loop through the rows
             while (!it.isAfterLast) {
                 //create a new item
+<<<<<<< HEAD
                 val item = ToDoItem(
                     it.getString(it.getColumnIndex(TABLE_TODO_ROW_DESC)),
                     it.getInt(it.getColumnIndex(TABLE_TODO_ROW_ID)),
                     it.getInt(it.getColumnIndex(TABLE_TODO_ROW_DONE)) == 1
                 )
+=======
+                val item = ToDoItem(it.getString(it.getColumnIndex(TABLE_TODO_ROW_DESC)), it.getInt(it.getColumnIndex(TABLE_TODO_ROW_ID)), it.getInt(it.getColumnIndex(TABLE_TODO_ROW_DONE)) == 1)
+>>>>>>> origin/main
                 //add the item to the list
                 list.add(item)
                 //move to the next row

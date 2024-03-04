@@ -2,7 +2,11 @@
 plugins {
     id("com.android.application") version "8.2.2" apply false
     id("org.jetbrains.kotlin.android") version "1.9.22" apply false
+<<<<<<< HEAD
     id("org.jetbrains.kotlin.kapt") version "1.9.22" apply false
+=======
+    id ("org.jetbrains.kotlin.kapt") version "1.9.22" apply false
+>>>>>>> origin/main
     kotlin("jvm") version "1.9.22"
     kotlin("plugin.serialization") version "1.9.22"
 }

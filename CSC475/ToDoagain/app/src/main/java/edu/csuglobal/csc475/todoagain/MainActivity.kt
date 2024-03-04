@@ -26,6 +26,7 @@ class MainActivity : ComponentActivity() {
         super.onDestroy()
         dataManager.close()
     }//end onDestroy function
+<<<<<<< HEAD
 
     init {
         //set permissions to allow file access
@@ -34,6 +35,14 @@ class MainActivity : ComponentActivity() {
         requestPermissions(arrayOf(permission), requestCode)
     }
 
+=======
+init {
+    //set permissions to allow file access
+    val permission = "android.permission.WRITE_EXTERNAL_STORAGE"
+    val requestCode = 1
+    requestPermissions(arrayOf(permission), requestCode)
+}
+>>>>>>> origin/main
     //create a onCreate function to set the content of the screen
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -121,6 +130,7 @@ class MainActivity : ComponentActivity() {
 }//end MainActivity class
 
 
+<<<<<<< HEAD
 @Composable
 fun ToDoItem(description: String, completion: Boolean) {
     //create a Text composable that displays the description of the ToDoItem
@@ -144,4 +154,29 @@ fun GreetingPreview() {
         Greeting("Android")
     }//end ToDoAgainTheme function
 }//end GreetingPreview function
+=======
+    @Composable
+    fun ToDoItem(description: String, completion: Boolean) {
+        //create a Text composable that displays the description of the ToDoItem
+        Text(
+            text = description
+        )
+    }//end ToDoItem function
+
+    @Composable
+    fun Greeting(name: String, modifier: Modifier = Modifier) {
+        Text(
+            text = "Hello $name!",
+            modifier = modifier
+        )
+    }//end Greeting function
+
+    @Preview(showBackground = true)
+    @Composable
+    fun GreetingPreview() {
+        ToDoAgainTheme {
+            Greeting("Android")
+        }//end ToDoAgainTheme function
+    }//end GreetingPreview function
+>>>>>>> origin/main
 

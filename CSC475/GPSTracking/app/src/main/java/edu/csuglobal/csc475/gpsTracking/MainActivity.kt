@@ -37,10 +37,17 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var locationRequest: LocationRequest
     private lateinit var locationCallback: LocationCallback
+<<<<<<< HEAD
     private lateinit var txtLong: TextView
     private lateinit var txtLat: TextView
     private lateinit var btnStart: Button
     private lateinit var mapShow: SupportMapFragment
+=======
+    private lateinit var txtLong:TextView
+    private lateinit var txtLat:TextView
+    private lateinit var btnStart:Button
+    private lateinit var mapShow:SupportMapFragment
+>>>>>>> origin/main
     private val places = ArrayList<Place>(25)
 
     private fun isGPSEnabled(): Boolean {
@@ -80,7 +87,10 @@ class MainActivity : AppCompatActivity() {
         }//end addOnCompleteListener()
 
     }//end turnOnGPS()
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -88,7 +98,11 @@ class MainActivity : AppCompatActivity() {
 
         txtLong = findViewById(R.id.txtLong)
         txtLat = findViewById(R.id.txtLat)
+<<<<<<< HEAD
         btnStart = findViewById(R.id.btnStart)
+=======
+        btnStart =  findViewById(R.id.btnStart)
+>>>>>>> origin/main
         mapShow = (supportFragmentManager.findFragmentById(R.id.mapShow) as SupportMapFragment)
         mapShow.getMapAsync { googleMap ->
             addMarkers(googleMap)
@@ -98,7 +112,11 @@ class MainActivity : AppCompatActivity() {
             .setInterval(10000).setFastestInterval(5000)
         btnStart.setOnClickListener {
             getCurrentLocation()
+<<<<<<< HEAD
         }//end setOnClickListener()
+=======
+            }//end setOnClickListener()
+>>>>>>> origin/main
 
         locationCallback = object : LocationCallback() {
             override fun onLocationResult(locationResult: LocationResult) {
@@ -142,7 +160,10 @@ class MainActivity : AppCompatActivity() {
             getCurrentLocation()
         }
     }//end onCreate()
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
     private fun addMarkers(googleMap: GoogleMap) {
         places.forEach { place ->
             googleMap.addMarker(
@@ -151,6 +172,7 @@ class MainActivity : AppCompatActivity() {
             )
         }//end forEach loop
     }//end addMarkers function
+<<<<<<< HEAD
 
     @RequiresApi(Build.VERSION_CODES.M)
     private fun getCurrentLocation() {
@@ -159,6 +181,11 @@ class MainActivity : AppCompatActivity() {
                 Manifest.permission.ACCESS_FINE_LOCATION
             ) == PackageManager.PERMISSION_GRANTED
         ) {
+=======
+    @RequiresApi(Build.VERSION_CODES.M)
+    private fun getCurrentLocation() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+>>>>>>> origin/main
             if (isGPSEnabled()) {
                 LocationServices.getFusedLocationProviderClient(this@MainActivity)
                     .requestLocationUpdates(locationRequest, object : LocationCallback() {
@@ -216,7 +243,11 @@ class MainActivity : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == 1) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+<<<<<<< HEAD
                 if (isGPSEnabled()) {
+=======
+                if(isGPSEnabled()) {
+>>>>>>> origin/main
                     getCurrentLocation()
                 }//end if
                 else {
@@ -231,12 +262,19 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 2) {
+<<<<<<< HEAD
             if (resultCode == Activity.RESULT_OK) {
+=======
+            if(resultCode == Activity.RESULT_OK) {
+>>>>>>> origin/main
                 getCurrentLocation()
             }//end if
         }//end if
     }//end onActivityResult()
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
     data class Place(
         val latLng: LatLng,
         val address: LatLng

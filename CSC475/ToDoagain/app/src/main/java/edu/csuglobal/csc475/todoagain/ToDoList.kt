@@ -1,6 +1,10 @@
 package edu.csuglobal.csc475.todoagain
 
+<<<<<<< HEAD
 class ToDoList<ToDoItem> : ArrayList<ToDoItem>() {
+=======
+class ToDoList<ToDoItem>: ArrayList<ToDoItem>() {
+>>>>>>> origin/main
     //create a list of items
     private val items = mutableListOf<ToDoItem>()
 

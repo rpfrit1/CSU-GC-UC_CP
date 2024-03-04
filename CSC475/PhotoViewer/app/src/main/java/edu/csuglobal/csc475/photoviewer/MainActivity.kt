@@ -9,7 +9,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+<<<<<<< HEAD
         val photo: ImageView = findViewById(R.id.imgPicture)
+=======
+        val photo:ImageView = findViewById(R.id.imgPicture)
+>>>>>>> origin/main
         Picasso.get().load("https://i.imgur.com/DvpvklR.png").into(photo);
     }
 }

@@ -6,8 +6,12 @@
     android:layout_marginRight="@dimen/margin_medium"
     android:gravity="center_vertical">
 
+<<<<<<< HEAD
     <TextView
         android:id="@+id/lblTask"
+=======
+    <TextView android:id="@+id/lblTask"
+>>>>>>> origin/main
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/element_text" />

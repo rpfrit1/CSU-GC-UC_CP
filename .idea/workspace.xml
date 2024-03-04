@@ -10,6 +10,11 @@
           <theme>@style/Theme.GPSTracker</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/checkin.xml">
+        <config>
+          <theme>@style/Theme.GPSTracker</theme>
+        </config>
+      </layout>
     </layouts>
   </component>
   <component name="AutoImportSettings">
@@ -113,23 +118,9 @@
       </GitPushTagMode>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="HARD" />
-    <option name="ROOT_SYNC" value="SYNC" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-  }
-}</component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="60d5d034-6cab-439f-a3ce-d4ae67f01fa3" />
-  </component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="60d5d034-6cab-439f-a3ce-d4ae67f01fa3" />
-        <option name="url" value="https://github.com/rpfrit1/CSU-GC-UC_CP.git" />
-      </UrlAndAccount>
-    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/app/src/main/java/edu/csuglobal/csc475/gpstracker/LocationAdapter.kt" root0="SKIP_HIGHLIGHTING" />
@@ -141,9 +132,7 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2cSHz5UPYM63umJE2ARollqFAF8" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -159,7 +148,7 @@
     "cidr.known.project.marker": "true",
     "last_directory_selection": "/Users/rpfrits/AndroidStudioProjects/GPSTracker/app/src/main/java",
     "last_opened_file_path": "/Users/rpfrits/AndroidStudioProjects/CSU-GC-UC_CP/CSC475/ConverterExample",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+    "settings.editor.selected.configurable": "vcs.Git"
   },
   "keyToStringList": {
     "GitStage.ChangesTree.GroupingKeys": [
@@ -306,31 +295,7 @@
       <option name="project" value="LOCAL" />
       <updated>1708131331672</updated>
     </task>
-    <task id="LOCAL-00007" summary="Revert &quot;Portfolio Project&quot;&#10;&#10;This reverts commit 87759867">
-      <option name="closed" value="true" />
-      <created>1709526129550</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1709526129550</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Reupload Converter project">
-      <option name="closed" value="true" />
-      <created>1709526290458</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1709526290458</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Reupload Converter project">
-      <option name="closed" value="true" />
-      <created>1709527213345</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1709527213345</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -352,14 +317,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <ignored-roots>
-      <path value="$PROJECT_DIR$/CSC475/ConverterExample" />
-    </ignored-roots>
     <MESSAGE value="Up0loading new project" />
-    <MESSAGE value="Revert &quot;Portfolio Project&quot;&#10;&#10;This reverts commit 87759867" />
-    <MESSAGE value="Reupload Converter project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reupload Converter project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Up0loading new project" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

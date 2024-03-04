@@ -16,7 +16,11 @@ class FirstFragment : Fragment() {
     private var _binding: FragmentFirstBinding? = null
     private val todos: ArrayList<ToDoItem> = ArrayList()
     private val adapter: ToDoAdapter = ToDoAdapter(todos)
+<<<<<<< HEAD
     private val dm: DataManager = DataManager(todos)
+=======
+    private val dm:DataManager = DataManager(todos)
+>>>>>>> origin/main
     // This property is only valid between onCreateView and
     // onDestroyView.
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <resources>
+=======
+<resources xmlns:tools="http://schemas.android.com/tools">
+>>>>>>> origin/main
     <!-- Base application theme. -->
     <style name="Base.Theme.ToDoDB" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->

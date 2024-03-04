@@ -17,7 +17,11 @@ class MainActivity : AppCompatActivity() {//end MainActivity class
     private lateinit var txtDate: EditText
     private lateinit var txtStartTime: EditText
     private lateinit var txtEndTime: EditText
+<<<<<<< HEAD
     private lateinit var btnDate: ImageButton
+=======
+    private lateinit var btnDate:  ImageButton
+>>>>>>> origin/main
     private lateinit var btnStartTime: ImageButton
     private lateinit var btnEndTime: ImageButton
     private lateinit var btnEmail: ImageButton
@@ -28,8 +32,12 @@ class MainActivity : AppCompatActivity() {//end MainActivity class
     private lateinit var item: CheckListItemDao
     private lateinit var titleList: List<ChecklistTitle>
     private lateinit var itemList: List<CheckListItem>
+<<<<<<< HEAD
     private lateinit var siteVisit: SiteVisit
 
+=======
+    private lateinit var siteVisit:SiteVisit
+>>>>>>> origin/main
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +47,11 @@ class MainActivity : AppCompatActivity() {//end MainActivity class
 
         dbInit()
         //set siteVisit to the visitId passed from Intent if it was passed by another activity
+<<<<<<< HEAD
         if (intent.hasExtra("siteId")) {
+=======
+        if(intent.hasExtra("siteId")){
+>>>>>>> origin/main
             siteVisit = db.siteVisitDao().getSiteVisit(intent.getIntExtra("siteVisit", 0))!!
         }//end if
         loadTitles()
@@ -63,6 +75,7 @@ class MainActivity : AppCompatActivity() {//end MainActivity class
 
             //create a datePickerDialog with today's date as a default
             val datePickerDialog = DatePickerDialog(
+<<<<<<< HEAD
                 this,
                 { _, year, month, dayOfMonth -> txtDate.setText("$month/$dayOfMonth/$year") }//end setOnDateSetListener
                 ,
@@ -70,6 +83,10 @@ class MainActivity : AppCompatActivity() {//end MainActivity class
                 c.get(Calendar.MONTH),
                 c.get(Calendar.DAY_OF_MONTH)
             )
+=======
+                this, { _, year, month, dayOfMonth -> txtDate.setText("$month/$dayOfMonth/$year") }//end setOnDateSetListener
+                , c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH))
+>>>>>>> origin/main
 
             datePickerDialog.show()//show datepicker
         }//end btnDate setOnClickListener
@@ -121,10 +138,14 @@ class MainActivity : AppCompatActivity() {//end MainActivity class
             val emailIntent = Intent(Intent.ACTION_SEND)
             emailIntent.type = "text/plain"
             emailIntent.putExtra(Intent.EXTRA_EMAIL, "richard.fritsche@csuglobal.edu")
+<<<<<<< HEAD
             emailIntent.putExtra(
                 Intent.EXTRA_SUBJECT,
                 "Site Visit to ${siteVisit.siteName} on ${siteVisit.visitDate}"
             )
+=======
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Site Visit to ${siteVisit.siteName} on ${siteVisit.visitDate}")
+>>>>>>> origin/main
             var body = siteVisit.toString()
             //add each checklist item with a title from checklistTitle to the body
             for (title in titleList) {
@@ -152,6 +173,7 @@ class MainActivity : AppCompatActivity() {//end MainActivity class
 
     private fun addVisit() {
         //If this site visit is not in the database, add site visit to database
+<<<<<<< HEAD
         if (visit.getSiteVisit(
                 siteVisit.siteName,
                 siteVisit.visitDate
@@ -179,6 +201,16 @@ class MainActivity : AppCompatActivity() {//end MainActivity class
                     siteVisit.visitEndTime
                 )
             )
+=======
+        if (visit.getSiteVisit(siteVisit.siteName, siteVisit.visitDate) == null && visit.getSiteVisit(siteVisit.visitId) == null) {
+            visit.insert(SiteVisit(0, txtSite.text.toString(), txtDate.text.toString(), txtStartTime.text.toString(), txtEndTime.text.toString()))
+            //create ChecklistItems in the database for each ChecklistTitle in the Checklist
+            addChecklistItems()
+        }//end if
+        else
+        {
+            visit.updateSiteVisit(SiteVisit(siteVisit.visitId, siteVisit.siteName, siteVisit.visitDate, siteVisit.visitStartTime, siteVisit.visitEndTime))
+>>>>>>> origin/main
         }//end else
     }//end addVisit function
 
@@ -240,11 +272,16 @@ class MainActivity : AppCompatActivity() {//end MainActivity class
         if (db.checklistTitleDao().getChecklistTitle("Inspect the IDFs") == null) {
             db.checklistTitleDao().insert(ChecklistTitle(0, "Inspect the IDFs"))
         }//end if
+<<<<<<< HEAD
         if (db.checklistTitleDao()
                 .getChecklistTitle("Talk with Site Leadership about issues") == null
         ) {
             db.checklistTitleDao()
                 .insert(ChecklistTitle(0, "Talk with Site Leadership about issues"))
+=======
+        if (db.checklistTitleDao().getChecklistTitle("Talk with Site Leadership about issues") == null) {
+            db.checklistTitleDao().insert(ChecklistTitle(0, "Talk with Site Leadership about issues"))
+>>>>>>> origin/main
         }//end if
         if (db.checklistTitleDao().getChecklistTitle("Check for RMA returns") == null) {
             db.checklistTitleDao().insert(ChecklistTitle(0, "Check for RMA returns"))
