@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="txtSite" type="id" />
+    <item name="txtDate" type="id" />
+    <item name="txtStartTime" type="id" />
+    <item name="txtEndTime" type="id" />
+    <item name="btnDate" type="id" />
+    <item name="btnStartTime" type="id" />
+    <item name="btnEndTime" type="id" />
+    <item name="btnEmail" type="id" />
+    <item name="btnToList" type="id" />
+    <item name="btnInProgress" type="id" />
+
+</resources>

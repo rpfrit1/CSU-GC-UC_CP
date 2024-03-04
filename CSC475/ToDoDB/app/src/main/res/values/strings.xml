@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ToDo DB</string>
+    <string name="show_completed">Show Completed</string>
+    <string name="add">Add Task</string>
+    <string name="hide_complete">HIde Complete</string>
+    <string name="task_description">Task Description</string>
+    <string name="update_task">Update Task</string>
+</resources>
