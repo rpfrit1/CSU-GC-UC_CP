@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".LengthFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/value_to_convert" />
+
+            <EditText
+                android:id="@+id/txtInitialVolume"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/base_value_to_convert"
+                android:inputType="number|numberDecimal"
+                android:textColorHint="#546E7A" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/lblConvertFromArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Convert From:" />
+
+        <RadioGroup
+            android:id="@+id/grpConvertFromVolume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/btnFromLiter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Liters" />
+
+            <RadioButton
+                android:id="@+id/btnFromML"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ML" />
+
+            <RadioButton
+                android:id="@+id/btnFromCC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="CC" />
+
+            <RadioButton
+                android:id="@+id/btnFromGal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Gallon" />
+
+            <RadioButton
+                android:id="@+id/btnFromQuart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quart" />
+
+            <RadioButton
+                android:id="@+id/btnFromPint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pint"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/btnFromCup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cup" />
+
+            <RadioButton
+                android:id="@+id/btnFromFlOz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Fluid Ounce" />
+
+            <RadioButton
+                android:id="@+id/btnFromTable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Tablespoon" />
+
+            <RadioButton
+                android:id="@+id/btnFromTea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Teaspoon" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/lblConvertToArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Convert To: " />
+
+        <RadioGroup
+            android:id="@+id/grpConvertToVolume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/btnToLiter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Liters" />
+
+            <RadioButton
+                android:id="@+id/btnToML"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ML" />
+
+            <RadioButton
+                android:id="@+id/btnToCC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="CC" />
+
+            <RadioButton
+                android:id="@+id/btnToGal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Gallon" />
+
+            <RadioButton
+                android:id="@+id/btnToQuart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quart" />
+
+            <RadioButton
+                android:id="@+id/btnToPint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pint" />
+
+            <RadioButton
+                android:id="@+id/btnToCup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cup" />
+
+            <RadioButton
+                android:id="@+id/btnToFlOz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Fluid Ounce" />
+
+            <RadioButton
+                android:id="@+id/btnToTable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Tablespoon" />
+
+            <RadioButton
+                android:id="@+id/btnToTea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Teaspoon" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Converted to: " />
+
+            <TextView
+                android:id="@+id/txtResultVolume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnClearVolume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clear" />
+    </LinearLayout>
+</FrameLayout>
