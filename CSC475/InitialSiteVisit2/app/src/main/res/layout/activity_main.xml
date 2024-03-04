@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/lblSite"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/site_id" />
+
+            <EditText
+                android:id="@+id/txtSite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/site_code_for_the_visit"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:lineSpacingExtra="10sp"
+                android:textColorHint="#546E7A"
+                tools:ignore="TouchTargetSizeCheck" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/lblDate"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/date" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/txtDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/date_of_the_visit"
+                    android:importantForAutofill="no"
+                    android:inputType="datetime|date"
+                    android:lineSpacingExtra="10sp"
+                    android:textColorHint="#546E7A"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <ImageButton
+                    android:id="@+id/btnDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/Visit_Date"
+                    android:importantForAccessibility="yes"
+                    app:srcCompat="@android:drawable/ic_menu_my_calendar"
+                    tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/lblStartTime"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/start_time" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/txtStartTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/start_of_visit"
+                    android:importantForAutofill="no"
+                    android:inputType="datetime|time"
+                    android:lineSpacingExtra="10sp"
+                    android:textColorHint="#546E7A"
+                    tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
+
+                <ImageButton
+                    android:id="@+id/btnStartTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/start_of_visit"
+                    app:srcCompat="@android:drawable/ic_lock_idle_alarm"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/lblEndTime"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/end_time" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/txtEndTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/end_of_visit"
+                    android:importantForAutofill="no"
+                    android:inputType="datetime|time"
+                    android:lineSpacingExtra="10sp"
+                    android:textColorHint="#546E7A"
+                    tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
+
+                <ImageButton
+                    android:id="@+id/btnEndTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/end_of_visit"
+                    app:srcCompat="@android:drawable/ic_lock_idle_alarm"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </LinearLayout>
+
+        </TableRow>
+    </TableLayout>
+
+    <ImageButton
+        android:id="@+id/btnEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="@string/email_visit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/ic_dialog_email"
+        tools:ignore="ImageContrastCheck" />
+
+    <Button
+        android:id="@+id/btnToList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/to_checklist"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
