@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Converter Example</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="value_to_convert">Value to Convert:</string>
+    <string name="y">Y</string>
+    <string name="mi">Mi</string>
+    <string name="cm">cM</string>
+    <string name="f">F</string>
+    <string name="in">In</string>
+    <string name="km">kM</string>
+    <string name="m">M</string>
+    <string name="base_value_to_convert">base value to convert</string>
+    <string name="convert_to">Convert To:</string>
+    <string name="convert_from">Convert From:</string>
+    <string name="square_y">Square Y</string>
+    <string name="square_mi">Square Mi</string>
+    <string name="converted_to">Converted to:</string>
+    <string name="acre">Acre</string>
+    <string name="clear">Clear</string>
+    <string name="square_cm">Square CM</string>
+    <string name="square_f">Square F</string>
+    <string name="square_km">Square KM</string>
+    <string name="square_in">Square In</string>
+    <string name="square_m">Square M</string>
+</resources>
