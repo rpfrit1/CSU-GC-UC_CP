@@ -37,17 +37,17 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var locationRequest: LocationRequest
     private lateinit var locationCallback: LocationCallback
-<<<<<<< HEAD
+    <<<<<<< HEAD
     private lateinit var txtLong: TextView
     private lateinit var txtLat: TextView
     private lateinit var btnStart: Button
     private lateinit var mapShow: SupportMapFragment
-=======
-    private lateinit var txtLong:TextView
-    private lateinit var txtLat:TextView
-    private lateinit var btnStart:Button
-    private lateinit var mapShow:SupportMapFragment
->>>>>>> origin/main
+    =======
+    private lateinit var txtLong: TextView
+    private lateinit var txtLat: TextView
+    private lateinit var btnStart: Button
+    private lateinit var mapShow: SupportMapFragment
+    >>>>>>> origin/main
     private val places = ArrayList<Place>(25)
 
     private fun isGPSEnabled(): Boolean {
@@ -87,10 +87,10 @@ class MainActivity : AppCompatActivity() {
         }//end addOnCompleteListener()
 
     }//end turnOnGPS()
-<<<<<<< HEAD
+    <<<<<<< HEAD
 
-=======
->>>>>>> origin/main
+    =======
+    >>>>>>> origin/main
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -98,11 +98,11 @@ class MainActivity : AppCompatActivity() {
 
         txtLong = findViewById(R.id.txtLong)
         txtLat = findViewById(R.id.txtLat)
-<<<<<<< HEAD
+        <<<<<<< HEAD
         btnStart = findViewById(R.id.btnStart)
-=======
-        btnStart =  findViewById(R.id.btnStart)
->>>>>>> origin/main
+        ====== =
+        btnStart = findViewById(R.id.btnStart)
+        >>>>>>> origin/main
         mapShow = (supportFragmentManager.findFragmentById(R.id.mapShow) as SupportMapFragment)
         mapShow.getMapAsync { googleMap ->
             addMarkers(googleMap)
@@ -112,21 +112,22 @@ class MainActivity : AppCompatActivity() {
             .setInterval(10000).setFastestInterval(5000)
         btnStart.setOnClickListener {
             getCurrentLocation()
-<<<<<<< HEAD
+            <<<<<<< HEAD
         }//end setOnClickListener()
-=======
-            }//end setOnClickListener()
->>>>>>> origin/main
+        ====== =
+    }//end setOnClickListener()
+    >>>>>>> origin/main
 
-        locationCallback = object : LocationCallback() {
-            override fun onLocationResult(locationResult: LocationResult) {
-                super.onLocationResult(locationResult)
-                val index = locationResult.locations.size - 1
-                txtLat.text = locationResult.locations[index].latitude.toString()
-                txtLong.text = locationResult.locations[index].longitude.toString()
+    locationCallback =
+    object : LocationCallback() {
+        override fun onLocationResult(locationResult: LocationResult) {
+            super.onLocationResult(locationResult)
+            val index = locationResult.locations.size - 1
+            txtLat.text = locationResult.locations[index].latitude.toString()
+            txtLong.text = locationResult.locations[index].longitude.toString()
 
-                //add locationResult to places
-                val location = LatLng(
+            //add locationResult to places
+            val location = LatLng(
                     locationResult.locations[index].latitude,
                     locationResult.locations[index].longitude
                 )
@@ -151,87 +152,93 @@ class MainActivity : AppCompatActivity() {
             }//end onLocationResult()
         }//end locationCallback object
 
-        //create a listener for the LocationCallback object
-        LocationServices.getFusedLocationProviderClient(this@MainActivity)
-            .requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper())
+    //create a listener for the LocationCallback object
+    LocationServices.getFusedLocationProviderClient(this@MainActivity )
+    .requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper())
 
-        //create a listener for the btnStart button
-        btnStart.setOnClickListener {
-            getCurrentLocation()
-        }
-    }//end onCreate()
+    //create a listener for the btnStart button
+    btnStart.setOnClickListener
+    {
+        getCurrentLocation()
+    }
+}//end onCreate()
 <<<<<<< HEAD
 
 =======
 >>>>>>> origin/main
-    private fun addMarkers(googleMap: GoogleMap) {
-        places.forEach { place ->
-            googleMap.addMarker(
-                MarkerOptions()
-                    .position(place.latLng).title(place.name)
-            )
-        }//end forEach loop
-    }//end addMarkers function
+private fun addMarkers(googleMap: GoogleMap) {
+    places.forEach { place ->
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(place.latLng).title(place.name)
+        )
+    }//end forEach loop
+}//end addMarkers function
 <<<<<<< HEAD
 
-    @RequiresApi(Build.VERSION_CODES.M)
-    private fun getCurrentLocation() {
-        if (ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ) == PackageManager.PERMISSION_GRANTED
-        ) {
-=======
-    @RequiresApi(Build.VERSION_CODES.M)
-    private fun getCurrentLocation() {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
->>>>>>> origin/main
-            if (isGPSEnabled()) {
-                LocationServices.getFusedLocationProviderClient(this@MainActivity)
-                    .requestLocationUpdates(locationRequest, object : LocationCallback() {
-                        override fun onLocationResult(locationResult: LocationResult) {
-                            super.onLocationResult(locationResult)
-                            LocationServices.getFusedLocationProviderClient(this@MainActivity)
-                                .removeLocationUpdates(this)
-                            if (locationResult.locations.size > 0) {
-                                val index = locationResult.locations.size - 1
-                                txtLat.text = locationResult.locations[index].latitude.toString()
-                                txtLong.text = locationResult.locations[index].longitude.toString()
+@RequiresApi(Build.VERSION_CODES.M)
+private fun getCurrentLocation() {
+    if (ActivityCompat.checkSelfPermission(
+            this,
+            Manifest.permission.ACCESS_FINE_LOCATION
+        ) == PackageManager.PERMISSION_GRANTED
+    ) {
+        ====== =
+        @RequiresApi(Build.VERSION_CODES.M)
+        private fun getCurrentLocation() {
+            if (ActivityCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.ACCESS_FINE_LOCATION
+                ) == PackageManager.PERMISSION_GRANTED
+            ) {
+                >>>>>>> origin/main
+                if (isGPSEnabled()) {
+                    LocationServices.getFusedLocationProviderClient(this@MainActivity)
+                        .requestLocationUpdates(locationRequest, object : LocationCallback() {
+                            override fun onLocationResult(locationResult: LocationResult) {
+                                super.onLocationResult(locationResult)
+                                LocationServices.getFusedLocationProviderClient(this@MainActivity)
+                                    .removeLocationUpdates(this)
+                                if (locationResult.locations.size > 0) {
+                                    val index = locationResult.locations.size - 1
+                                    txtLat.text =
+                                        locationResult.locations[index].latitude.toString()
+                                    txtLong.text = locationResult.locations[index].longitude.toString()
 
-                                //add locationResult to places
-                                val location = LatLng(
-                                    locationResult.locations[index].latitude,
-                                    locationResult.locations[index].longitude
-                                )
-                                //add to mapShow
-                                mapShow.getMapAsync { googleMap ->
-                                    googleMap.addMarker(
-                                        MarkerOptions()
-                                            .position(location)
+                                    //add locationResult to places
+                                    val location = LatLng(
+                                        locationResult.locations[index].latitude,
+                                        locationResult.locations[index].longitude
                                     )
-                                    places.add(Place(location, location))
-                                    addMarkers(googleMap)
-                                    googleMap.moveCamera(CameraUpdateFactory.newLatLng(location))
-                                    googleMap.animateCamera(CameraUpdateFactory.zoomIn())
-                                    googleMap.animateCamera(
-                                        CameraUpdateFactory.zoomTo(15f),
-                                        2000,
-                                        null
-                                    )
-                                }//end getMapAsync function
-                            }//end if
-                        }//end onLocationResult()
-                    }/*end requestLocationUpdates*/, Looper.getMainLooper())
+                                    //add to mapShow
+                                    mapShow.getMapAsync { googleMap ->
+                                        googleMap.addMarker(
+                                            MarkerOptions()
+                                                .position(location)
+                                        )
+                                        places.add(Place(location, location))
+                                        addMarkers(googleMap)
+                                        googleMap.moveCamera(CameraUpdateFactory.newLatLng(location))
+                                        googleMap.animateCamera(CameraUpdateFactory.zoomIn())
+                                        googleMap.animateCamera(
+                                            CameraUpdateFactory.zoomTo(15f),
+                                            2000,
+                                            null
+                                        )
+                                    }//end getMapAsync function
+                                }//end if
+                            }//end onLocationResult()
+                        }/*end requestLocationUpdates*/, Looper.getMainLooper())
+                }//end if
+                else {
+                    turnOnGPS()
+                }//end else
             }//end if
             else {
-                turnOnGPS()
+                requestPermissions(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 1)
             }//end else
-        }//end if
-        else {
-            requestPermissions(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 1)
-        }//end else
-        //end if
-    }//end getLocation()
+            //end if
+        }//end getLocation()
 
 
     @RequiresApi(Build.VERSION_CODES.M)
@@ -243,17 +250,17 @@ class MainActivity : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == 1) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-<<<<<<< HEAD
+                <<<<<<< HEAD
                 if (isGPSEnabled()) {
-=======
-                if(isGPSEnabled()) {
->>>>>>> origin/main
-                    getCurrentLocation()
+                    ====== =
+                    if (isGPSEnabled()) {
+                        >>>>>>> origin/main
+                        getCurrentLocation()
+                    }//end if
+                    else {
+                        turnOnGPS()
+                    }//end else
                 }//end if
-                else {
-                    turnOnGPS()
-                }//end else
-            }//end if
         }//end if
     }//end onRequestPermissionsResult()
 
@@ -262,29 +269,29 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 2) {
-<<<<<<< HEAD
+            <<<<<<< HEAD
             if (resultCode == Activity.RESULT_OK) {
-=======
-            if(resultCode == Activity.RESULT_OK) {
->>>>>>> origin/main
-                getCurrentLocation()
+                ====== =
+                if (resultCode == Activity.RESULT_OK) {
+                    >>>>>>> origin/main
+                    getCurrentLocation()
+                }//end if
             }//end if
-        }//end if
-    }//end onActivityResult()
-<<<<<<< HEAD
+        }//end onActivityResult()
+        <<<<<<< HEAD
 
-=======
->>>>>>> origin/main
-    data class Place(
-        val latLng: LatLng,
-        val address: LatLng
-    ) {
-        val name: String
+        ====== =
+        >>>>>>> origin/main
+        data class Place(
+            val latLng: LatLng,
+            val address: LatLng
+        ) {
+            val name: String
 
-        init {
-            //set name to the time stamp
-            name = System.currentTimeMillis().toString()
-        }//end init function
+            init {
+                //set name to the time stamp
+                name = System.currentTimeMillis().toString()
+            }//end init function
     }//end Place class
 }//end MainActivity
 

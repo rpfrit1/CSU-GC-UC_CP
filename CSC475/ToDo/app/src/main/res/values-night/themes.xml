@@ -1,17 +1,23 @@
-<<<<<<< HEAD
-<resources>
-    <!-- Base application theme. -->
-    <style name="Base.Theme.ToDo" parent="Theme.Material3.DayNight.NoActionBar">
-=======
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-<<<<<<<< HEAD:CSC475/GPSTracking/app/src/main/res/values-night/themes.xml
-    <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
-========
-    <style name="Base.Theme.ToDo" parent="Theme.Material3.DayNight.NoActionBar">
->>>>>>>> origin/main:CSC475/ToDo/app/src/main/res/values-night/themes.xml
->>>>>>> origin/main
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
-    </style>
-</resources>
+<<<<<<< HEAD<resources>
+<!-- Base application theme. -->
+<style name="Base.Theme.ToDo" parent="Theme.Material3.DayNight.NoActionBar">
+    =======
+    <resources>
+        <!-- Base application theme. -->
+        <
+        <
+        <
+        <
+        <
+        <
+        <
+        < HEAD:CSC475/GPSTracking/app/src/main/res/values-night/themes.xml
+        <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
+        ========
+        <style name="Base.Theme.ToDo" parent="Theme.Material3.DayNight.NoActionBar">
+            >>>>>>>> origin/main:CSC475/ToDo/app/src/main/res/values-night/themes.xml
+            >>>>>>> origin/main
+            <!-- Customize your dark theme here. -->
+            <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        </style>
+    </resources>

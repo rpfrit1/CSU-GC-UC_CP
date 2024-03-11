@@ -16,15 +16,28 @@
         android:id="@+id/txturl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
+
+    <
+
+    <
+
+    <
+
+    <
+
+    <
+
+    <
+
+    < HEAD
         android:autofillHints=""
         android:inputType="text|textUri"
         android:minHeight="48dp" />
-=======
-        android:inputType="text|textUri"
-        android:minHeight="48dp"
-        android:autofillHints="" />
->>>>>>> origin/main
+    =======
+    android:inputType="text|textUri"
+    android:minHeight="48dp"
+    android:autofillHints="" />
+    >>>>>>> origin/main
 
     <Button
         android:id="@+id/btnUrl"

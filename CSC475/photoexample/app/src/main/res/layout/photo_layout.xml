@@ -1,27 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-=======
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
->>>>>>> origin/main
-    tools:ignore="UseCompoundDrawables">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"<<<<<<< HEAD
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"=======xmlns:app="http://schemas.android.com/apk/res-auto"xmlns:tools="http://schemas.android.com/tools"android:orientation="vertical"android:layout_width="match_parent"android:layout_height="match_parent">>>>>>> origin/maintools:ignore="UseCompoundDrawables">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/test_image"
-        android:src="@drawable/test_image" />
+<ImageView
+android:id="@+id/imageView"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:contentDescription="@string/test_image"
+android:src="@drawable/test_image" />
 
-    <TextView
+<TextView
         android:id="@+id/lblText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

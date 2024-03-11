@@ -24,21 +24,21 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
 class MainActivity : AppCompatActivity() {
     //create variables for the add button, show button, and hide button
-<<<<<<< HEAD
+    <<<<<<< HEAD
     private lateinit var addButton: Button
     private lateinit var showButton: Button
     private lateinit var hideButton: Button
 
     //create a variable for taskTable
     private lateinit var taskTable: TableLayout
-=======
-    private lateinit var addButton:Button
-    private lateinit var showButton:Button
-    private lateinit var hideButton:Button
+    =======
+    private lateinit var addButton: Button
+    private lateinit var showButton: Button
+    private lateinit var hideButton: Button
 
     //create a variable for taskTable
-    private lateinit var taskTable:TableLayout
->>>>>>> origin/main
+    private lateinit var taskTable: TableLayout
+    >>>>>>> origin/main
 
     //create a TaskManager object to manage the SQLite database
     private lateinit var taskManager: TaskManager
@@ -466,15 +466,19 @@ class Task(val taskId: Int, val taskDescription: String, val taskDone: Boolean) 
 
     //create a constructor that takes a Cursor and inserts the information from the Cursor into a Task object
     @SuppressLint("Range")
-<<<<<<< HEAD
+    <<<<<<< HEAD
     constructor(cursor: Cursor) : this(
         cursor.getInt(cursor.getColumnIndex(TaskManager.TASK_COLUMN_ID)),
         cursor.getString(cursor.getColumnIndex(TaskManager.TASK_COLUMN_DESCRIPTION)),
         cursor.getInt(cursor.getColumnIndex(TaskManager.TASK_COLUMN_STATUS)) == 1
     )
-=======
-    constructor(cursor: Cursor) : this(cursor.getInt(cursor.getColumnIndex(TaskManager.TASK_COLUMN_ID)), cursor.getString(cursor.getColumnIndex(TaskManager.TASK_COLUMN_DESCRIPTION)), cursor.getInt(cursor.getColumnIndex(TaskManager.TASK_COLUMN_STATUS)) == 1)
->>>>>>> origin/main
+    =======
+    constructor(cursor: Cursor) : this(
+        cursor.getInt(cursor.getColumnIndex(TaskManager.TASK_COLUMN_ID)),
+        cursor.getString(cursor.getColumnIndex(TaskManager.TASK_COLUMN_DESCRIPTION)),
+        cursor.getInt(cursor.getColumnIndex(TaskManager.TASK_COLUMN_STATUS)) == 1
+    )
+    >>>>>>> origin/main
 }//end Task class
 
 //create a class to hold a list of tasks
@@ -528,60 +532,69 @@ class TaskAdapter(private val tasks: List<Task>) :
         //create a new view
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.todo_item_row, parent, false)
-=======
-class TaskAdapter(private val tasks: List<Task>) : RecyclerView.Adapter<TaskAdapter.ViewHolder>() {//end ViewHolder class
+        ====== =
+        class TaskAdapter(private val tasks: List<Task>) :
+            RecyclerView.Adapter<TaskAdapter.ViewHolder>() {//end ViewHolder class
 
-        //create a variable to hold the task description
-        val taskDescription: EditText = view.findViewById(R.id.taskText)
-        //create a variable to hold the task status
-        val taskStatus: CheckBox = view.findViewById(R.id.checkbox)
-        //create a variable to hold the task id
-        val taskId: TextView = view.findViewById(R.id.taskId)
-        val commitButton: Button = view.findViewById(R.id.commit)
+            //create a variable to hold the task description
+            val taskDescription: EditText = view.findViewById(R.id.taskText)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        //create a new view
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.todo_item_row, parent, false)
->>>>>>> origin/main
-        //create a new ViewHolder object
-        return ViewHolder(view)
-    }//end onCreateViewHolder function
+            //create a variable to hold the task status
+            val taskStatus: CheckBox = view.findViewById(R.id.checkbox)
 
-    //create a class to ho
-    override fun getItemCount(): Int {
-        //return the number of tasks
-        return tasks.size
-    }//end getItemCount function
+            //create a variable to hold the task id
+            val taskId: TextView = view.findViewById(R.id.taskId)
+            val commitButton: Button = view.findViewById(R.id.commit)
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        //get the task from the list
-        val task = tasks[position]
-        //set the task description
-        holder.taskDescription.setText(task.taskDescription)
-    }
-}
+            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+                //create a new view
+                val view = LayoutInflater.from(parent.context)
+                    .inflate(R.layout.todo_item_row, parent, false)
+                >>>>>>> origin/main
+                //create a new ViewHolder object
+                return ViewHolder(view)
+            }//end onCreateViewHolder function
+
+            //create a class to ho
+            override fun getItemCount(): Int {
+                //return the number of tasks
+                return tasks.size
+            }//end getItemCount function
+
+            override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+                //get the task from the list
+                val task = tasks[position]
+                //set the task description
+                holder.taskDescription.setText(task.taskDescription)
+            }
+        }
 
 //create a method to create a ViewHolder object
-<<<<<<< HEAD
-override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-    //create a new view
-    val view = LayoutInflater.from(parent.context).inflate(R.layout.todo_item_row, parent, false)
-    //create a new ViewHolder object
-    return RecyclerView.ViewHolder(view)
-}//end onCreateViewHolder function
+        <<<<<<< HEAD
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+            //create a new view
+            val view =
+                LayoutInflater.from(parent.context).inflate(R.layout.todo_item_row, parent, false)
+            //create a new ViewHolder object
+            return RecyclerView.ViewHolder(view)
+        }//end onCreateViewHolder function
 
-//create a method to bind the ViewHolder object with the task information
-override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        //create a method to bind the ViewHolder object with the task information
+        override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 //get the task from the list
-=======
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        //create a new view
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.todo_item_row, parent, false)
-        //create a new ViewHolder object
-        return RecyclerView.ViewHolder(view)
-    }//end onCreateViewHolder function
+            ====== =
+            override fun onCreateViewHolder(
+                parent: ViewGroup,
+                viewType: Int
+            ): RecyclerView.ViewHolder {
+                //create a new view
+                val view = LayoutInflater.from(parent.context)
+                    .inflate(R.layout.todo_item_row, parent, false)
+                //create a new ViewHolder object
+                return RecyclerView.ViewHolder(view)
+            }//end onCreateViewHolder function
 
-    //create a method to bind the ViewHolder object with the task information
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        //get the task from the list
->>>>>>> origin/main
+            //create a method to bind the ViewHolder object with the task information
+            override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+                //get the task from the list
+                >>>>>>> origin/main
